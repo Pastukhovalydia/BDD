@@ -54,7 +54,7 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void transferWithExceedingAmountShouldShowErrorMessage() throws InterruptedException {
+    void transferWithExceedingAmountShouldShowErrorMessage()  {
         // Переводим случайную сумму, превышающую баланс карты
         var amount = generateInvalidAmount(secondCardBalance);
         cardOperations.transferBetweenCards(String.valueOf(amount), secondCardInfo, firstCardInfo);
@@ -66,7 +66,7 @@ public class MoneyTransferTest {
     }
 
     @Test
-    void transferZeroAmountBetweenCardsShouldNotChangeBalances() throws InterruptedException {
+    void transferZeroAmountBetweenCardsShouldNotChangeBalances()  {
         // Переводим 0 RUB с первой карты на вторую
         var amount = 0;
         cardOperations.transferBetweenCards(String.valueOf(amount), firstCardInfo, secondCardInfo);
